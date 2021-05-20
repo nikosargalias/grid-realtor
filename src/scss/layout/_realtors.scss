@@ -1,27 +1,35 @@
 .realtors {
+  overflow: hidden;
   &__content {
-    padding: $padding-section-small 0;
+    padding: $padding-section 0;
     height: 100%;
     display: grid;
     place-items: center;
     place-content: center;
     justify-items: start;
-    grid-gap: 1rem 0;
+    grid-gap: 2rem 1rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include media(tablet) {
+      grid-template-columns: none;
+    }
   }
 
   &__heading {
     justify-self: center;
+    grid-column: 1 / -1;
   }
 
   &__person {
-    margin-bottom: 4rem;
     display: grid;
-    // justify-content: start;
-
     grid-column-gap: 1rem;
     grid-template-areas:
       "img name"
       "img info";
+
+    @include media(tablet) {
+      margin-bottom: 4rem;
+    }
   }
 
   &__name {

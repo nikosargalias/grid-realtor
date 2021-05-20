@@ -8,16 +8,21 @@
     grid-template-rows: repeat(7, 1fr);
     grid-gap: 2rem;
     padding: 2rem;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   &__img {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition: all 0.2s;
     // overflow: hidden;
 
     // width: 100%;
+
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 
   &__img:first-of-type {

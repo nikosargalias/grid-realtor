@@ -14,8 +14,7 @@
   justify-items: stretch;
 
   &__header {
-    grid-column: max-start / col-end 3;
-    grid-column: main-start / third-start;
+    grid-column: main;
     min-height: 80vh;
     background-image: linear-gradient(
         rgba($color-secondary, 0.9),
@@ -23,21 +22,44 @@
       ),
       url("../../img/hero.jpeg");
     @extend %container;
+
+    @include media(tablet) {
+      grid-column: main-start / third-start;
+    }
   }
 
   &__realtors {
-    grid-column: col-start 4 / max-end;
-    grid-column: third;
+    grid-area: 3 / main-start / span 1 / -1;
+
     background: $color-secondary;
     @extend %container;
     color: $font-color-light;
+
+    @include media(small-tab) {
+      grid-area: 2 / main-start / span 1 / -1;
+    }
+
+    @include media(tablet) {
+      grid-row: 1 / span 1;
+      // grid-column: col-start 4 / max-end;
+      grid-column: third;
+    }
   }
 
   &__sidebar {
-    padding: 4rem;
+    padding: 2rem;
     background: $color-primary;
-    grid-column: sidebar;
-    grid-row: 1 / -1;
+    grid-row: 1 / span 1;
+    grid-column: 1 / -1;
+
+    @include media(small-tab) {
+      grid-column: sidebar;
+      grid-row: 1 / span 7;
+    }
+
+    @include media(tablet) {
+      grid-row: 1 / -1;
+    }
 
     @extend %container;
   }

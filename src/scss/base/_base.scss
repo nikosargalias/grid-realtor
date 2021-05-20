@@ -1,5 +1,9 @@
 html {
-  font-size: 62.5%;
+  font-size: 50%;
+
+  @include media(small-tab) {
+    font-size: 62.5%;
+  }
 }
 
 html,
