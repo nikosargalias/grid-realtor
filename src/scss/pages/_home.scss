@@ -1,17 +1,21 @@
 .home {
   width: 100%;
   display: grid;
-  // grid-template-columns: [sidebar-start] .5fr [sidebar-end max-start] minmax(5%, 1fr) [center-start] repeat(4, [col-start] minmax(min-content, 275rem) [col-end]) [center-end] minmax(5%, 1fr) [max-end];
-  // grid-template-columns: [sidebar-start] .5fr [sidebar-end max-start] minmax(5%, 1fr) [center-start] repeat(4, [col-start] minmax(min-content, 275rem) [col-end]) [center-end] minmax(5%, 1fr) [max-end];
 
   grid-template-columns:
     [sidebar-start] minmax(min-content, max-content)
-    [sidebar-end main-start] minmax(min-content, 5fr)
-    [third-start] minmax(min-content, 2fr) [third-end main-end];
-  //   grid-template-rows: minmax(max-content, 80vh) repeat(auto-fit, 1fr);
-  grid-template-rows: repeat(6, auto);
-  grid-auto-rows: fit-content;
+    [main-start] minmax(min-content, 5fr)
+    [third-start] minmax(min-content, 2fr) [third-end main-end sidebar-end];
+  // grid-template-rows: repeat(6, auto);
+  // grid-auto-rows: fit-content;
   justify-items: stretch;
+
+  @include media(small-tab) {
+    grid-template-columns:
+      [sidebar-start] minmax(min-content, max-content)
+      [sidebar-end main-start] minmax(min-content, 5fr)
+      [third-start] minmax(min-content, 2fr) [third-end main-end];
+  }
 
   &__header {
     grid-column: main;
@@ -47,18 +51,24 @@
   }
 
   &__sidebar {
-    padding: 2rem;
-    background: $color-primary;
+    position: relative;
     grid-row: 1 / span 1;
-    grid-column: 1 / -1;
+    grid-column: sidebar;
+    background: $color-primary;
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
     @include media(small-tab) {
-      grid-column: sidebar;
+      justify-content: center;
+      align-items: start;
+      padding: 2rem 5rem;
       grid-row: 1 / span 7;
     }
 
     @include media(tablet) {
-      grid-row: 1 / -1;
+      grid-row: 1 / span 6;
     }
 
     @extend %container;
