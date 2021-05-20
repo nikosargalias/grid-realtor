@@ -1,0 +1,64 @@
+.header {
+  &__content {
+    padding: $padding-section-medium 0;
+    height: 100%;
+    color: $font-color-light;
+
+    display: grid;
+    grid-template-rows: 1fr repeat(3, minmax(min-content, max-content)) 1fr;
+    justify-items: left;
+    grid-gap: 0.5rem;
+  }
+
+  [class*="heading"] {
+    // margin: 0;
+  }
+
+  &__btn {
+  }
+
+  &__logo {
+    object-fit: contain;
+    height: 3.5rem;
+    align-self: start;
+    justify-self: center;
+    margin-bottom: 4rem;
+  }
+
+  &__partners {
+    margin-top: 4rem;
+    align-self: end;
+    justify-self: stretch;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    grid-gap: 1rem 0.5rem;
+    color: $color-grey-light-2; // display: flex;
+    p {
+      justify-self: stretch;
+      grid-column: 1 / -1;
+      color: inherit;
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      align-items: center;
+      justify-items: center;
+      gap: 1rem;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        background-color: currentColor;
+        height: 1px;
+        justify-self: stretch;
+      }
+    }
+  }
+
+  &__partner-logo {
+    object-fit: contain;
+    max-height: 2rem;
+    filter: brightness(70%);
+  }
+}

@@ -1,0 +1,62 @@
+.home {
+  display: grid;
+  // grid-template-columns: [sidebar-start] .5fr [sidebar-end max-start] minmax(5%, 1fr) [center-start] repeat(4, [col-start] minmax(min-content, 275rem) [col-end]) [center-end] minmax(5%, 1fr) [max-end];
+  grid-template-columns: [sidebar-start] .5fr [sidebar-end max-start] minmax(5%, 1fr) [center-start] repeat(4, [col-start] minmax(min-content, 275rem) [col-end]) [center-end] minmax(5%, 1fr) [max-end];
+  //   grid-template-rows: minmax(max-content, 80vh) repeat(auto-fit, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-auto-rows: fit-content;
+
+  & > * {
+    padding: 40px;
+  }
+
+  &__header {
+    background: blue;
+    grid-column: max-start / col-end 3;
+  }
+
+  &__realtors {
+      grid-column: col-start 4 / max-end;
+      background: yellow;
+  }
+
+  &__sidebar {
+    // padding: 50px;
+    background: red;
+    grid-column: sidebar;
+    grid-row: 1 / -1;
+  }
+
+  &__features {
+    background: red;
+    grid-column: center;
+    // grid-column: max;
+  }
+
+  &__story {
+      background: yellow;
+      grid-column: max;
+  }
+
+  &__listings {
+
+      grid-column: center;
+      grid-column: max;
+      .listings__container {
+        background: green;
+        width: 1200px;
+        max-width: 95%;
+        margin: 0 auto;
+      }
+  }
+
+  &__gallery {
+      background: blue;
+      grid-column: max;
+  }
+
+  &__footer {
+    background: green;
+    grid-column: max;
+  }
+}

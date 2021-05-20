@@ -1,0 +1,81 @@
+.home {
+  width: 100%;
+  display: grid;
+  // grid-template-columns: [sidebar-start] .5fr [sidebar-end max-start] minmax(5%, 1fr) [center-start] repeat(4, [col-start] minmax(min-content, 275rem) [col-end]) [center-end] minmax(5%, 1fr) [max-end];
+  // grid-template-columns: [sidebar-start] .5fr [sidebar-end max-start] minmax(5%, 1fr) [center-start] repeat(4, [col-start] minmax(min-content, 275rem) [col-end]) [center-end] minmax(5%, 1fr) [max-end];
+
+  grid-template-columns:
+    [sidebar-start] minmax(min-content, max-content)
+    [sidebar-end main-start] minmax(min-content, 5fr)
+    [third-start] minmax(min-content, 2fr) [third-end main-end];
+  //   grid-template-rows: minmax(max-content, 80vh) repeat(auto-fit, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-auto-rows: fit-content;
+  justify-items: stretch;
+
+  &__header {
+    grid-column: max-start / col-end 3;
+    grid-column: main-start / third-start;
+    min-height: 80vh;
+    background-image: linear-gradient(
+        rgba($color-secondary, 0.9),
+        rgba($color-secondary, 0.9)
+      ),
+      url("../../img/hero.jpeg");
+    @extend %container;
+  }
+
+  &__realtors {
+    grid-column: col-start 4 / max-end;
+    grid-column: third;
+    background: $color-secondary;
+    @extend %container;
+    color: $font-color-light;
+  }
+
+  &__sidebar {
+    padding: 4rem;
+    background: $color-primary;
+    grid-column: sidebar;
+    grid-row: 1 / -1;
+
+    @extend %container;
+  }
+
+  &__features {
+    background: #f3f3f3;
+    grid-column: main;
+    color: $font-color-dark;
+
+    @extend %container;
+  }
+
+  &__story {
+    grid-column: main;
+
+    @extend %container;
+  }
+
+  &__listings {
+    width: auto;
+    grid-column: center;
+    grid-column: main;
+    color: $font-color-dark;
+
+    @extend %container;
+  }
+
+  &__gallery {
+    grid-column: main;
+    background: $color-grey-light-1;
+    @extend %container;
+  }
+
+  &__footer {
+    grid-column: main;
+    background-color: $color-secondary;
+    color: $font-color-light;
+
+    @extend %container;
+  }
+}

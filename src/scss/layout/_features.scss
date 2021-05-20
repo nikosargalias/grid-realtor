@@ -1,0 +1,10 @@
+.features {
+  &__content {
+    padding: $padding-section-big 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+  }
+}

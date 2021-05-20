@@ -1,0 +1,23 @@
+.btn {
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: $font-secondary;
+  text-align: center;
+  line-height: 1;
+
+  &--primary {
+    color: $font-color-light;
+    padding: 1.5rem 3rem;
+    background-color: $color-primary;
+  }
+  &--secondary {
+    color: $font-color-light;
+    padding: 1.5rem 3rem;
+    background-color: $color-secondary;
+  }
+
+  &:link {
+    text-decoration: none;
+  }
+}
