@@ -7,6 +7,9 @@
     display: grid;
     grid-template-rows: 1fr repeat(3, minmax(min-content, max-content)) 1fr;
     justify-items: left;
+    // align-items: stretch;
+    // border: red solid 2px;
+    // align-content: stretch;
     grid-gap: 0.5rem;
   }
 

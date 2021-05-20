@@ -1,15 +1,12 @@
 .listing {
   display: grid;
-  //   grid-template-rows: repeat(5, minmax(min-content, 1fr));
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 3rem 0;
   background: $color-grey-light-1;
 
   &__img {
-    // width: 300px;
     grid-row: 1 / span 1;
     grid-column: 1 / -1;
-    // margin-bottom: 2rem;
   }
 
   &__btn {
@@ -18,11 +15,14 @@
     align-self: end;
     transform: translateY(50%);
     justify-self: center;
+
+    &:hover {
+      transform: scale(1.05) translateY(48%);
+    }
   }
 
   &__info {
     align-self: end;
-    // justify-self: center;
     margin-left: 2rem;
     display: flex;
     align-items: center;

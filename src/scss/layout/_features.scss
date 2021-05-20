@@ -5,6 +5,10 @@
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     justify-content: center;
     align-content: center;
-    gap: 2rem;
+    gap: 3rem;
+
+    @include media(small-tab) {
+      gap: 2rem;
+    }
   }
 }

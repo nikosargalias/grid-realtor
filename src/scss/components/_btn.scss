@@ -5,6 +5,7 @@
   font-family: $font-secondary;
   text-align: center;
   line-height: 1;
+  transition: all 0.2s;
 
   &--primary {
     color: $font-color-light;
@@ -20,4 +21,16 @@
   &:link {
     text-decoration: none;
   }
+
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.05) translateY(-2px);
+  }
+
+  &:active {
+    opacity: 1;
+    transform: scale(0.95) translateY(2px);
+  }
+
+
 }

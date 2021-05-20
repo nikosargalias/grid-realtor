@@ -19,13 +19,20 @@
 
   &__header {
     grid-column: main;
-    min-height: 80vh;
+    height: 100%;
+    min-height: calc(100vh - 10rem);
     background-image: linear-gradient(
         rgba($color-secondary, 0.9),
         rgba($color-secondary, 0.9)
       ),
       url("../../img/hero.jpeg");
+    background-size: cover;
+
     @extend %container;
+
+    @include media(small-tab) {
+      min-height: 100vh;
+    }
 
     @include media(tablet) {
       grid-column: main-start / third-start;
@@ -55,12 +62,13 @@
     grid-row: 1 / span 1;
     grid-column: sidebar;
     background: $color-primary;
-    padding: 5rem 2rem;
+    height: 10rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 
     @include media(small-tab) {
+      height: 100%;
       justify-content: center;
       align-items: start;
       padding: 2rem 5rem;

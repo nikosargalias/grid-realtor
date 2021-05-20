@@ -1,4 +1,5 @@
 html {
+  scroll-behavior: smooth;
   font-size: 50%;
 
   @include media(small-tab) {
